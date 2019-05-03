@@ -1,0 +1,9 @@
+<p>
+  <button (click)="getAllEvents()">List Events</button>
+</p>
+<p *ngFor="let event of list">
+{{ event.name }}
+{{ event.dates.start.dateTime }}
+{{ event.url }}
+
+</p>
