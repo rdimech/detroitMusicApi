@@ -1,9 +1,12 @@
 <p>
+    Event Name<input [(ngModel)]="searchKeyword" type="text">
   <button (click)="getAllEvents()">List Events</button>
 </p>
-<p *ngFor="let event of list">
+<p *ngFor="let event of list, let i = index">
 {{ event.name }}
-{{ event.dates.start.dateTime }}
-{{ event.url }}
+{{ event.startTime }}
+{{event.favorite}}
+<button *ngIf='!event.favorite' (click)='saveFavorite(i)'></button>
+<!-- {{ event.url }} -->
 
 </p>
