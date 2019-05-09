@@ -35,6 +35,10 @@ export class SearchCriteriaComponent implements OnInit {
   errorMessage: string;
   searchKeyword: string = '';
   formattedKeyword: string;
+  searchStartDate: string='';
+  formattedStartDate: string='';
+  searchEndDate: string='';
+  formattedEndDate: string='';
   favorite: boolean;
 
 // @Output() submitted = new EventEmitter<any>();
@@ -47,8 +51,14 @@ export class SearchCriteriaComponent implements OnInit {
     });
   }
   getAllEvents = () => {
+    if (this.searchStartDate != ''){
+      this.formattedStartDate = this.searchStartDate + 'T00:00:00Z';
+    };
+    if (this.searchEndDate != ''){
+      this.formattedEndDate = this.searchEndDate + 'T00:00:00Z';
+    };
     this.formattedKeyword = this.searchKeyword.replace(/ /g, '+');
-    this.api.getEvents(this.formattedKeyword).subscribe((data: ApiData) => {
+    this.api.getEvents(this.formattedKeyword, this.formattedStartDate, this.formattedEndDate).subscribe((data: ApiData) => {
       // console.log(data);
       this.list = data._embedded.events.map(event => {
         return { name: event.name, url: event.url, startTime: event.dates.start.dateTime, favorite: false }
@@ -56,6 +66,8 @@ export class SearchCriteriaComponent implements OnInit {
       console.log(this.list);
       this.errorMessage = null;
       this.searchKeyword = '';
+      this.searchStartDate='';
+      this.searchEndDate='';
     },
       error => {
         this.errorMessage = error.message;

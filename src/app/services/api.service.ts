@@ -11,7 +11,7 @@ export class Api {
         return this._favorites.getValue();
     }
     constructor(private http: HttpClient) {}
-    getEvents = (formattedKeyword) => this.http.get(this.apiUrl + '&keyword=' + formattedKeyword);
+    getEvents = (formattedKeyword, searchStartDate, searchEndDate) => this.http.get(this.apiUrl + '&keyword=' + formattedKeyword + '&startDateTime=' + searchStartDate + '&endDateTime=' + searchEndDate);
 
     addFavorite = nextState => this._favorites.next(nextState)
 }
