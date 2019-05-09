@@ -22,6 +22,10 @@ interface ApiData {
     events: Events[];
   }
 }
+
+
+
+
 @Component({
   selector: 'searchCriteria',
   templateUrl: './search.component.html',
@@ -41,7 +45,6 @@ export class SearchCriteriaComponent implements OnInit {
   formattedEndDate: string='';
   favorite: boolean;
 
-// @Output() submitted = new EventEmitter<any>();
 
   constructor(private api: Api) { }
 
@@ -68,6 +71,7 @@ export class SearchCriteriaComponent implements OnInit {
       this.searchKeyword = '';
       this.searchStartDate='';
       this.searchEndDate='';
+
     },
       error => {
         this.errorMessage = error.message;
@@ -78,5 +82,6 @@ export class SearchCriteriaComponent implements OnInit {
   saveFavorite = (index) => {
     this.list[index].favorite = !this.list[index].favorite;
     this.api.addFavorite([...this.favorites, this.list[index]]);
+
   };
 }
