@@ -9,6 +9,7 @@ import { SearchCriteriaComponent } from './search/search.component';
 import { EventListComponent } from './list/list.component';
 import { BucketListPageComponent } from './bucket/bucket.component';
 import { RouterModule, Routes } from '@angular/router';
+import { Api } from './services/api.service';
 
 // **Routing**
 const appRoutes: Routes = [
@@ -31,7 +32,7 @@ const appRoutes: Routes = [
     HttpClientModule, 
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [Api],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

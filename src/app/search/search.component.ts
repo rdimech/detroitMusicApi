@@ -26,13 +26,12 @@ interface ApiData {
   selector: 'searchCriteria',
   templateUrl: './search.component.html',
   styleUrls: [],
-  providers: [Api]
 })
 
 export class SearchCriteriaComponent implements OnInit {
   title = 'Search';
   list: MapArray[];
-  favorites: [];
+  favorites: any[];
   errorMessage: string;
   searchKeyword: string = '';
   formattedKeyword: string;

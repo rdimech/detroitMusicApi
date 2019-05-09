@@ -20,7 +20,6 @@ interface Events {
   selector: 'app-bucket',
   templateUrl: './bucket.component.html',
   styleUrls: ['./bucket.component.css'],
-  providers: [Api]
 })
 export class BucketListPageComponent implements OnInit {
   list: MapArray[];
@@ -42,7 +41,6 @@ export class BucketListPageComponent implements OnInit {
 
   saveFavorite = (index) => {
     this.list[index].favorite = !this.list[index].favorite;
-    // **Unsure if the below line is correct**
     
   };
 }
