@@ -1,3 +1,16 @@
-<p>
-  bucket works!
-</p>
+
+<!-- <div *ngFor="let bucket of list; let i = index">
+    <h3>  {{ list.name }}  </h3>
+      <p> {{ list.startTime }} </p>
+      <p> {{ list.url }} </p>
+      <button (click)='saveFavorite(i)'></button>
+</div> -->
+
+<p *ngFor="let event of list, let i = index">
+  {{ event.name }}
+  {{ event.startTime }}
+  <!-- **Delete event.favorite (below) from HTML -->
+  {{event.favorite}}
+  <button (click)='saveFavorite(i)'></button>
+  <!-- {{ event.url }} -->
+  </p>
