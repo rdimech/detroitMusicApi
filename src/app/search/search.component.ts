@@ -44,6 +44,12 @@ export class SearchCriteriaComponent implements OnInit {
   searchEndDate: string='';
   formattedEndDate: string='';
   favorite: boolean;
+  locations = [
+    {id: "266", name: "Detroit"},
+    {id: "286", name: "Grand Rapids-Kalamazoo-Battle Creek"},
+    {id: "317", name: "Lansing"}
+  ];
+  selectedLocation: string;
 
 
   constructor(private api: Api) { }
@@ -61,11 +67,12 @@ export class SearchCriteriaComponent implements OnInit {
       this.formattedEndDate = this.searchEndDate + 'T00:00:00Z';
     };
     this.formattedKeyword = this.searchKeyword.replace(/ /g, '+');
-    this.api.getEvents(this.formattedKeyword, this.formattedStartDate, this.formattedEndDate).subscribe((data: ApiData) => {
+    this.api.getEvents(this.formattedKeyword, this.formattedStartDate, this.formattedEndDate, this.selectedLocation).subscribe((data: ApiData) => {
       // console.log(data);
       this.list = data._embedded.events.map(event => {
         return { name: event.name, url: event.url, startTime: event.dates.start.dateTime, favorite: false }
       });
+      console.log(this.selectedLocation);
       console.log(this.list);
       this.errorMessage = null;
       this.searchKeyword = '';
