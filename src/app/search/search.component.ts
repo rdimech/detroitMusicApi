@@ -80,8 +80,16 @@ export class SearchCriteriaComponent implements OnInit {
   };
 
   saveFavorite = (index) => {
-    this.list[index].favorite = !this.list[index].favorite;
+    this.list[index].favorite = this.list[index].favorite = true;
     this.api.addFavorite([...this.favorites, this.list[index]]);
+
+  };
+
+  removeFavorite = (index) => {
+    this.list[index].favorite = this.list[index].favorite = false;
+    const favoritesIndex = this.favorites.indexOf(this.list[index]);
+    this.favorites.splice(favoritesIndex, 1);
+    this.api.addFavorite(this.favorites);
 
   };
 }
