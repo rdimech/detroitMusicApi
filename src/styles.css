@@ -6,6 +6,10 @@
     color: white;
 }
 
+.venue {
+    color: white;
+}
+
 .url:hover {
     color: cyan;
 }
@@ -47,4 +51,8 @@ input[type="date" i] {
 input[type="text" i] {
     font-family: arial;
     padding: 5px;
+}
+
+select {
+    height: 30px;
 }
