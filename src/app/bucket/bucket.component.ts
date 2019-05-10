@@ -23,6 +23,7 @@ interface Events {
 })
 export class BucketListPageComponent implements OnInit {
   list: MapArray[];
+  favorites: any[];
   errorMessage: string;
   searchKeyword: string = '';
   formattedKeyword: string;
@@ -40,7 +41,14 @@ export class BucketListPageComponent implements OnInit {
     }
 
   saveFavorite = (index) => {
-    this.list[index].favorite = !this.list[index].favorite;
+    this.list[index].favorite = this.list[index].favorite = true;
     
+  };
+
+  removeFavorite = (index) => {
+    this.list[index].favorite = this.list[index].favorite = false;
+    this.list.splice(index, 1);
+    this.api.addFavorite(this.list);
+
   };
 }
