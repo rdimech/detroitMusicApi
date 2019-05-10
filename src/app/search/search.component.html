@@ -5,15 +5,10 @@
   <button (click)="getAllEvents()">List Events</button>
 </p>
 <p *ngFor="let event of list, let i = index">
-
-  <img src='assets/images/ticket.png'>  
   <span class="name">{{ event.name }}</span><br>
   <span class="date">{{ event.startTime }}</span><br>
-  {{event.favorite}}<br>
-  <button *ngIf='!event.favorite' (click)='saveFavorite(i)'></button>
-
+  <button class="favoritesButton" type="reset" width=100 style="background-image: url('./assets/images/bucketlist_off.svg')" *ngIf='!event.favorite' (click)='saveFavorite(i)'></button>
+  <button class="favoritesButton" type="reset" width=100 style="background-image: url('./assets/images/bucketlist_on.svg')" *ngIf='event.favorite' (click)='saveFavorite(i)'></button>
   <a href="{{ event.url }}" class="url">View Event on Ticketmaster</a><br>
-<!-- {{ event.url }} -->
-
 </p>
 

@@ -28,3 +28,23 @@ a {
 img {
     font-size: 10px;
 }
+
+.favoritesButton {
+    width: 35px;
+    height: 35px;
+    color: none;
+}
+
+button {
+    height: 30px;
+}
+
+input[type="date" i] {
+    font-family: arial;
+    padding: 5px;
+}
+
+input[type="text" i] {
+    font-family: arial;
+    padding: 5px;
+}
