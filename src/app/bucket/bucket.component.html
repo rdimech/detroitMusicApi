@@ -8,4 +8,5 @@
   <button class="favoritesButton" type="reset" width=100 style="background-image: url('./assets/images/bucketlist_off.svg')" *ngIf='!event.favorite' (click)='saveFavorite(i)'></button>
   <button class="favoritesButton" type="reset" width=100 style="background-image: url('./assets/images/bucketlist_on.svg')" *ngIf='event.favorite' (click)='saveFavorite(i)'></button>
   <a href="{{ event.url }}" class="url">View Event on Ticketmaster</a>
+
 </p>
