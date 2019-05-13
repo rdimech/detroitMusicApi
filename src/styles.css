@@ -1,22 +1,21 @@
 .name {
     color: white;
+    width: auto;
 }
 
 .date {
     color: white;
-}
-
-.venue {
-    color: white;
+    width: auto;
 }
 
 .url:hover {
-    color: cyan;
+    color: #B7C9D3;
 }
 
 body {
+    width: auto;
     display: flex;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: interstate-bold;
     color: white;
     background-image: linear-gradient(260deg, 
                     rgb(0, 45, 161), 
@@ -25,8 +24,17 @@ body {
 }
 
 a {
+    font-family: interstate-black;
+    color: #009cde;
+    font-size: 20px;
+    flex-direction: column;
+}
+
+.links {
+    font-family: interstate-black;
     color: white;
-    padding: 20px;
+    font-size: 20px;
+    flex-direction: column;
 }
 
 img {
@@ -55,4 +63,27 @@ input[type="text" i] {
 
 select {
     height: 30px;
+}
+
+/* h2 {
+    text-align: center;
+} */
+
+.verified {
+    size: 50%;
+    align-items: flex-end;
+    position: absolute;
+    right: 450px;
+}
+
+#navigation {
+    width: auto;
+    height: 50px;
+    border-radius: 10px;
+    /* margin-left: 20px; */
+    background: white;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    /* justify-items: flex-start; */
 }
