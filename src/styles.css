@@ -11,10 +11,16 @@
 .url:hover {
     color: #B7C9D3;
 }
+.listDiv, .listP, .favDiv {
+margin: 0 auto;
+width: 550px;
+}
 
 body {
     width: 1100px;
     display: flex;
+    justify-content: center;
+    margin: 0 auto;
     font-family: 'interstate-bold', 'helvetica';
     color: white;
     background-image: linear-gradient(260deg, 
@@ -52,26 +58,27 @@ button {
 }
 
 input[type="date" i] {
-    font-family: arial;
+    font-family: 'interstate-black', 'helvetica';
     padding: 5px;
+    width: 100%;
 }
 
-input[type="text" i] {
-    font-family: arial;
+input[type="text" i], select {
+    font-family: 'interstate-black', 'helvetica';
     padding: 5px;
+    width: 100%;
 }
 
 select {
     height: 30px;
 }
 
-/* h2 {
+h2 {
     text-align: center;
-} */
+}
 
 .verified {
     size: 50%;
-    align-items: flex-end;
     float: right;
 }
 
@@ -85,4 +92,17 @@ select {
     display: flex;
     justify-content: space-around;
     /* justify-items: flex-start; */
+}
+
+.inputDiv {
+    width: 550px;
+    margin: 0 auto;
+}
+
+.apiButton {
+    width: 100%;
+    background-color: #009cde;
+    font-family: 'interstate-black', 'helvetica';
+    border: none;
+    color: white;
 }
