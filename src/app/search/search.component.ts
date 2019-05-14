@@ -49,7 +49,7 @@ export class SearchCriteriaComponent implements OnInit {
     {id: "286", name: "Grand Rapids-Kalamazoo-Battle Creek"},
     {id: "317", name: "Lansing"}
   ];
-  selectedLocation: string = "266";
+  selectedLocation: string;
 
 
   constructor(private api: Api) { }
