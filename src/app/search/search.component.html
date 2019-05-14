@@ -3,15 +3,15 @@
   <h2>search ticketmaster events below by keyword, date range or michigan areas!</h2>
 </div>
 
-<p>
-    Event Name<input [(ngModel)]="searchKeyword" type="text">
-    Event Start Date<input [(ngModel)]="searchStartDate" type="date">
-    Event End Date<input [(ngModel)]="searchEndDate" type="date">
-    <select [(ngModel)]="selectedLocation" >
+<div class = "inputDiv">
+    Event Name<input [(ngModel)]="searchKeyword" type="text"><br><br>
+    Event Start Date<input [(ngModel)]="searchStartDate" type="date"><br><br>
+    Event End Date<input [(ngModel)]="searchEndDate" type="date"><br><br>
+    <select [(ngModel)]="selectedLocation" ><br><br>
         <option *ngFor="let l of locations" [ngValue]="l.id">{{ l.name }}</option>
-    </select>
-  <button (click)="getAllEvents()">List Events</button>
-</p>
+    </select><br><br>
+  <button class="apiButton" (click)="getAllEvents()">List Events</button><br><br>
+</div>
 
 
 <list [list]="list"></list>
