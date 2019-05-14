@@ -11,7 +11,7 @@
 .url:hover {
     color: #B7C9D3;
 }
-.listDiv, .listP, .favDiv {
+.listDiv, .listP, .bucketDiv {
 margin: 0 auto;
 width: 550px;
 }
