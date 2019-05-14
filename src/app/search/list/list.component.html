@@ -1,0 +1,7 @@
+<p *ngFor="let event of list, let i = index">
+  <span class="name">{{ event.name }}</span><br>
+  <span class="date">{{ event.startTime }}</span><br>
+  <button class="favoritesButton" type="reset" width=100 style="background-image: url('./assets/images/bucketlist_off.svg')" *ngIf='!event.favorite' (click)='saveFavorite(i)'></button>
+  <button class="favoritesButton" type="reset" width=100 style="background-image: url('./assets/images/bucketlist_on.svg')" *ngIf='event.favorite' (click)='removeFavorite(i)'></button>
+  <a href="{{ event.url }}" class="url">View Event on Ticketmaster</a><br>
+</p>

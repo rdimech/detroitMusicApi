@@ -6,8 +6,8 @@ import { FormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
 // import { HttpClient } from 'selenium-webdriver/http';
 import { SearchCriteriaComponent } from './search/search.component';
-import { EventListComponent } from './list/list.component';
-import { BucketListPageComponent } from './bucket/bucket.component';
+import { EventListComponent } from './search/list/list.component';
+import { BucketListPageComponent } from './search/bucket/bucket.component';
 import { RouterModule, Routes } from '@angular/router';
 import { Api } from './services/api.service';
 
