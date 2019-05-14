@@ -1,5 +1,6 @@
 import { Component, Output, OnInit  } from '@angular/core';
 import { Api } from '../services/api.service'
+import { NOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR } from '@angular/core/src/view/provider';
 
 interface MapArray {
   name: string;
@@ -67,12 +68,22 @@ export class SearchCriteriaComponent implements OnInit {
     this.formattedKeyword = this.searchKeyword.replace(/ /g, '+');
     this.api.getEvents(this.formattedKeyword, this.formattedStartDate, this.formattedEndDate, this.selectedLocation).subscribe((data: ApiData) => {
       // console.log(data);
-      this.list = data._embedded.events.map(event => {
-        return { name: event.name, url: event.url, startTime: event.dates.start.dateTime, favorite: false }
-      });
+      if (data._embedded) {
+        this.list = data._embedded.events.map(event => {
+          return { name: event.name, url: event.url, startTime: event.dates.start.dateTime, favorite: false }
+        
+        })
+        
+        this.errorMessage = null;
+         
+        }
+        else  {
+          this.errorMessage = 'No Results Found';
+          
+        };
+     
       console.log(this.selectedLocation);
       console.log(this.list);
-      this.errorMessage = null;
       this.searchKeyword = '';
       this.searchStartDate='';
       this.searchEndDate='';
