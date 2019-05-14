@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Api } from '../services/api.service'
+import { Api } from '../../services/api.service'
 
 interface MapArray {
   name: string;
@@ -22,7 +22,7 @@ interface Events {
   styleUrls: ['./bucket.component.css'],
 })
 export class BucketListPageComponent implements OnInit {
-  list: MapArray[];
+  @Input() list: MapArray[];
   favorites: any[];
   errorMessage: string;
   searchKeyword: string = '';
