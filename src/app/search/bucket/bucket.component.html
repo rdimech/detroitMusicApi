@@ -3,6 +3,7 @@
   <img src="assets/images/bucket-list.svg">
 </div>
 
+<div class="bucketDiv">
 <p *ngFor="let event of list, let i = index">
   {{ event.name }}<br>
   {{ event.startTime.substring(0,10) }}<br>
@@ -11,7 +12,7 @@
 
   <a href="{{ event.url }}" target="_blank" class="url">View Event on Ticketmaster</a>
 </p>
-
+</div>
 
 <div>
     <img class="verified" src="assets/images/TicketmasterVerifiedTickets_Logo_rgb.png">
