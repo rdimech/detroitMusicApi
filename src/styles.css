@@ -71,8 +71,8 @@ select {
 
 .verified {
     size: 50%;
-    align-items: flex-end;
-    float: right;
+display: flex;
+align-items: center;
 }
 
 #navigation {
